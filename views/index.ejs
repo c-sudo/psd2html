@@ -1,0 +1,40 @@
+<%include layout.ejs%>
+<div class="off-canvas-wrapper" xmlns="http://www.w3.org/1999/html">
+	<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+		<div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
+			<div class="row column">
+				<img class="thumbnail" src="images/a.png">
+				<h5><%=title%></h5>
+				<p>PSD自动化处理系统.</p>
+			</div>
+		</div>
+		<div class="off-canvas-content" data-off-canvas-content>
+			<div class="title-bar hide-for-large">
+				<div class="title-bar-left">
+					<button class="menu-icon" type="button" data-open="my-info"></button>
+					<span class="title-bar-title">Vanery's Control</span>
+				</div>
+			</div>
+			<div class="callout primary">
+				<div class="row column">
+					<!--<h1>列表</h1>-->
+					<p class="lead">列表 </p>
+					<a href="/add" class="add">新增</a>
+				</div>
+			</div>
+			<div class="row small-up-2 medium-up-3 large-up-4">
+				<div class="row">
+					<% for(var i = 0, len = result.length; i < len; i++) { %>
+					<div class="column">
+						<a href="/page/<%-result[i].url%>"><img class="thumbnail" src="temps/<%-result[i].firstImage%>"></a>
+						<h5><%-result[i].date%><br><a href="#" class="delete" code="<%-result[i].id%>">删除</a><br><a href="#" class="edit" code="<%-result[i].id%>">编辑</a></h5>
+					</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/javascripts/app.js"></script>
+<script src="/javascripts/zcom.js"></script>
+<%include footer.ejs%>

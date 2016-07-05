@@ -1,0 +1,58 @@
+<%include layout.ejs%>
+<div class="off-canvas-wrapper" xmlns="http://www.w3.org/1999/html">
+	<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+		<div class="off-canvas position-left reveal-for-large" id="my-info" data-off-canvas data-position="left">
+			<div class="row column">
+				<img class="thumbnail" src="/images/a.png">
+				<h5><%=title%></h5>
+				<p></p>
+			</div>
+		</div>
+		<div class="off-canvas-content" data-off-canvas-content>
+			<div class="title-bar hide-for-large">
+				<div class="title-bar-left">
+					<button class="menu-icon" type="button" data-open="my-info"></button>
+					<span class="title-bar-title">
+
+					</span>
+				</div>
+			</div>
+			<div class="callout primary">
+				<div class="row column">
+					<!--<h1>列表</h1>-->
+					<p class="lead">
+						<% if (locals.success) { %>
+						<div id="alt_sucess" class="alert alert-success">
+							<%- success %>
+						</div>
+						<% } %>
+
+						<% if (locals.error) { %>
+						<div id="alt_warning" class="alert alert-warning">
+							<%= error %>
+						</div>
+						<% } %>
+
+						<form class="form-signin" role="form" method="post" enctype='multipart/form-data'>
+							<input id="fulAvatar" name="fulAvatar" type="file" class="form-control" />
+							<button id="btnSub" class="btn btn-lg btn-primary" type="submit">上 传</button>
+						</form>
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<h2>设计稿制作规范</h2>
+				<p>由于手机分辨率差异较大，所以并没有固定的尺寸能适应所有手机分辨率。</p>
+				<p>设计稿推荐使用 640 * 1008px，这个分辨率能适配市面上绝多大数手机。</p>
+				<p>640*1136px是iphone5的分辨率，1008px 是iphone下 1136px 减去 微信头部的高度128px 得到的结果。</p>
+				<p>按图层组来分场景，一个图层组为一个屏幕展示的内容，就是一个场景页面</p>
+				<p><img src="/images/jieshao1.png" alt=""/></p>
+				<p>每个图层可以设置一个动画效果，所以将多个作用于同一个效果的图层尽量合并在一起；需要的图层必须是可见状态；不可见的图层会被过滤</p>
+				<p><img src="/images/jieshao2.png" alt=""/></p>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/javascripts/app.js"></script>
+<script src="/javascripts/zcom.js"></script>
+<%include footer.ejs%>

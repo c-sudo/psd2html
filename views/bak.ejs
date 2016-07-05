@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="" />
+	<meta name="apple-touch-fullscreen" content="yes" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Expires" content="-1" />
+	<meta http-equiv="pragram" content="no-cache" />
+	<title><%%></title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/animations.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+	<script src="/javascripts/zepto.min.js"></script>
+	<script src="/temps/<%-result.url%>/index.js"></script>
+</head>
+<body>
+<div id="container">
+	<div class="wrapper" id="wrapper">
+
+		<% for(var key in result.image) { %>
+
+		<% if(result.image[key] != "bounds"){ %>
+		<% var item = result.image[key] %>
+		<div class="item" curID="<%-key%>">
+			<% for(var j = item.length;j--;) { %>
+			<img src="/temps/<%-result.url%>/<%-item[j].id%>.png" style="left:<%-item[j].left%>px;top:<%-item[j].top%>px;z-index:<%-item[j].index%>"/>
+			<% } %>
+		</div>
+		<% } %>
+		<% } %>
+	</div>
+</div>
+<header class="app-header">
+	<!--<a href="javascript:void(0);" class="u-globalAudio">-->
+	<!--<i class="icon-music"></i>-->
+	<!--<audio src="/music/love.mp3" autoplay="autoplay" loop="loop"></audio>-->
+	<!--</a>-->
+</header>
+<div class="loading" id="loading">
+	<div class="spinner">
+		<div class="spinner-container container1">
+			<div class="circle1"></div>
+			<div class="circle2"></div>
+			<div class="circle3"></div>
+			<div class="circle4"></div>
+		</div>
+		<div class="spinner-container container2">
+			<div class="circle1"></div>
+			<div class="circle2"></div>
+			<div class="circle3"></div>
+			<div class="circle4"></div>
+		</div>
+		<div class="spinner-container container3">
+			<div class="circle1"></div>
+			<div class="circle2"></div>
+			<div class="circle3"></div>
+			<div class="circle4"></div>
+		</div>
+		<div id="loadingNum">0%</div>
+	</div>
+</div>
+<script src="/javascripts/touchScroll.js"></script>
+<script type="text/javascript" src="/javascripts/touchinit.js"></script>
+</body>
+</html>

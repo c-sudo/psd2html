@@ -1,0 +1,7 @@
+.column a:first-child{
+    display: block;
+    max-height:174px;
+    overflow: hidden;
+    border:1px solid #d1d1d1;
+    /*box-shadow:5px 5px 5px #aaaaaa;*/
+}
